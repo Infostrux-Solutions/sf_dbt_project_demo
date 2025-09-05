@@ -1,0 +1,7 @@
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+
+# Build output directories
+target/
