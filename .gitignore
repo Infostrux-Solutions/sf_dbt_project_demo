@@ -1,0 +1,33 @@
+# Virtual Environments
+.venv
+.env
+builds/
+*.zip
+
+# dbt
+target/
+logs/
+dbt_packages/
+dbt_modules/
+.user.yml
+
+#Python
+__pycache__/
+**/__pycache__/*
+*.py[cod]
+*$py.class
+
+# IDEs
+.idea/
+
+.DS_Store
+profiles.yml
+
+# build files
+ready.tmp
+
+## DBT Artifacts
+.dbt_artifacts/
+
+#data
+seeds/*
