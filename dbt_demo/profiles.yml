@@ -1,6 +1,14 @@
 tasty_bytes:
   target: dev
   outputs:
+    sandbox:
+      type: snowflake
+      account: 'not needed'
+      user: 'not needed'
+      role: accountadmin
+      database: DBT_DEMO_DB
+      schema: mine
+      warehouse: DEMO_WH
     dev:
       type: snowflake
       account: 'not needed'
