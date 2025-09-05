@@ -12,6 +12,10 @@ CREATE OR REPLACE SCHEMA dbt_demo_db.prod;
 CREATE OR REPLACE SCHEMA dbt_demo_db.integrations;
 
 
+ALTER SCHEMA dbt_demo_db.integrations SET LOG_LEVEL = 'INFO';
+ALTER SCHEMA dbt_demo_db.integrations SET TRACE_LEVEL = 'ALWAYS';
+ALTER SCHEMA dbt_demo_db.integrations SET METRIC_LEVEL = 'ALL';
+
 ALTER SCHEMA dbt_demo_db.mine SET LOG_LEVEL = 'INFO';
 ALTER SCHEMA dbt_demo_db.mine SET TRACE_LEVEL = 'ALWAYS';
 ALTER SCHEMA dbt_demo_db.mine SET METRIC_LEVEL = 'ALL';

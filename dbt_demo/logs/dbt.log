@@ -3518,3 +3518,503 @@ Database 'TASTY_BYTES_DBT_DB' does not exist or not authorized.
 [0m20:57:05.886590 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 30.221758, "process_in_blocks": "0", "process_kernel_time": 1.63, "process_mem_max_rss": "445808", "process_out_blocks": "0", "process_user_time": 8.23}
 [0m20:57:05.887358 [debug] [Dummy-1   ]: Command `cli build` failed at 20:57:05.887041 after 30.22 seconds
 [0m20:57:05.887953 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 14:02:44.751396 | 2493d230-0fc7-4fa1-90ac-55e955f5934a ==============================
+[0m14:02:44.751396 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m14:02:44.752523 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m14:02:45.136525 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m14:02:45.925943 [debug] [Dummy-1   ]: checksum: 7e68f05170aba8bcabb0acf247522ccc825f510ae79ab72a8be4e6e896199d5e, vars: {}, profile: , target: sandbox, version: 1.9.4
+[0m14:02:45.927799 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:02:48.824831 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m14:02:48.828152 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m14:02:48.887444 [info ] [Dummy-1   ]: Found 11 models, 53 data tests, 8 sources, 592 macros
+[0m14:02:48.891881 [info ] [Dummy-1   ]: 
+[0m14:02:48.892588 [info ] [Dummy-1   ]: Concurrency: 1 threads (target='sandbox')
+[0m14:02:48.893249 [info ] [Dummy-1   ]: 
+[0m14:02:48.894178 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m14:02:48.902370 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_DBT_DEMO_DB'
+[0m14:02:49.049258 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DEMO_DB"
+[0m14:02:49.049992 [debug] [ThreadPool]: On list_DBT_DEMO_DB: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "connection_name": "list_DBT_DEMO_DB"} */
+show terse schemas in database DBT_DEMO_DB
+    limit 10000
+[0m14:02:49.050549 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:02:49.426777 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.376 seconds
+[0m14:02:49.431734 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_DBT_DEMO_DB, now list_DBT_DEMO_DB_mine)
+[0m14:02:49.449836 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DEMO_DB_mine"
+[0m14:02:49.450497 [debug] [ThreadPool]: On list_DBT_DEMO_DB_mine: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "connection_name": "list_DBT_DEMO_DB_mine"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m14:02:49.450993 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:02:49.831633 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.380 seconds
+[0m14:02:49.837719 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DEMO_DB_mine"
+[0m14:02:49.838353 [debug] [ThreadPool]: On list_DBT_DEMO_DB_mine: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "connection_name": "list_DBT_DEMO_DB_mine"} */
+show objects in DBT_DEMO_DB.mine
+    limit 10000
+    
+;
+[0m14:02:49.917098 [debug] [ThreadPool]: SQL status: SUCCESS 11 in 0.078 seconds
+[0m14:02:49.920029 [debug] [ThreadPool]: Using snowflake connection "list_DBT_DEMO_DB_mine"
+[0m14:02:49.920648 [debug] [ThreadPool]: On list_DBT_DEMO_DB_mine: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "connection_name": "list_DBT_DEMO_DB_mine"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m14:02:49.964702 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.043 seconds
+[0m14:02:49.976951 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m14:02:49.977963 [info ] [Thread-2 (]: 1 of 11 START sql view model mine.raw_customer_customer_loyalty ................ [RUN]
+[0m14:02:49.978753 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_DBT_DEMO_DB_mine, now model.tasty_bytes.raw_customer_customer_loyalty)
+[0m14:02:49.979351 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_customer_customer_loyalty
+[0m14:02:49.993328 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m14:02:49.994368 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_customer_customer_loyalty
+[0m14:02:50.048020 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m14:02:50.049565 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_customer_customer_loyalty"
+[0m14:02:50.050241 [debug] [Thread-2 (]: On model.tasty_bytes.raw_customer_customer_loyalty: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_customer_customer_loyalty"} */
+create or replace   view DBT_DEMO_DB.mine.raw_customer_customer_loyalty
+  
+   as (
+    select *
+from DBT_DEMO_DB.RAW.CUSTOMER_LOYALTY
+  );
+[0m14:02:50.050844 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:50.504457 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.453 seconds
+[0m14:02:50.539767 [info ] [Thread-2 (]: 1 of 11 OK created sql view model mine.raw_customer_customer_loyalty ........... [[32mSUCCESS 1[0m in 0.56s]
+[0m14:02:50.540782 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_customer_customer_loyalty
+[0m14:02:50.541536 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_country
+[0m14:02:50.542505 [info ] [Thread-2 (]: 2 of 11 START sql incremental model mine.raw_pos_country ....................... [RUN]
+[0m14:02:50.543345 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_customer_customer_loyalty, now model.tasty_bytes.raw_pos_country)
+[0m14:02:50.543943 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_country
+[0m14:02:50.551148 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_country"
+[0m14:02:50.551994 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_country
+[0m14:02:50.609029 [debug] [Thread-2 (]: Dropping relation DBT_DEMO_DB.mine.raw_pos_country because it is a view and this model is a table.
+[0m14:02:50.620608 [debug] [Thread-2 (]: Applying DROP to: "DBT_DEMO_DB"."MINE"."RAW_POS_COUNTRY"
+[0m14:02:50.635424 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m14:02:50.636150 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_country"} */
+drop view if exists "DBT_DEMO_DB"."MINE"."RAW_POS_COUNTRY" cascade
+[0m14:02:50.636732 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:51.024316 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.387 seconds
+[0m14:02:51.046147 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_country"
+[0m14:02:51.047546 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m14:02:51.048190 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_country"} */
+create or replace transient table DBT_DEMO_DB.mine.raw_pos_country
+         as
+        (
+
+SELECT *
+FROM DBT_DEMO_DB.RAW.COUNTRY
+        );
+[0m14:02:51.985164 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.936 seconds
+[0m14:02:51.994475 [debug] [Thread-2 (]: Applying DROP to: DBT_DEMO_DB.mine.raw_pos_country__dbt_tmp
+[0m14:02:51.996077 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_country"
+[0m14:02:51.996733 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_country: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_country"} */
+drop view if exists DBT_DEMO_DB.mine.raw_pos_country__dbt_tmp cascade
+[0m14:02:52.061999 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.064 seconds
+[0m14:02:52.065629 [info ] [Thread-2 (]: 2 of 11 OK created sql incremental model mine.raw_pos_country .................. [[32mSUCCESS 1[0m in 1.52s]
+[0m14:02:52.066578 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_country
+[0m14:02:52.067283 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_franchise
+[0m14:02:52.068138 [info ] [Thread-2 (]: 3 of 11 START sql view model mine.raw_pos_franchise ............................ [RUN]
+[0m14:02:52.068854 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_country, now model.tasty_bytes.raw_pos_franchise)
+[0m14:02:52.069462 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_franchise
+[0m14:02:52.078202 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_franchise"
+[0m14:02:52.079087 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_franchise
+[0m14:02:52.085330 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_franchise"
+[0m14:02:52.086484 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_franchise"
+[0m14:02:52.087083 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_franchise: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_franchise"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_franchise
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.FRANCHISE
+  );
+[0m14:02:52.087637 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:52.509947 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.422 seconds
+[0m14:02:52.513688 [info ] [Thread-2 (]: 3 of 11 OK created sql view model mine.raw_pos_franchise ....................... [[32mSUCCESS 1[0m in 0.44s]
+[0m14:02:52.514630 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_franchise
+[0m14:02:52.515336 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_location
+[0m14:02:52.516255 [info ] [Thread-2 (]: 4 of 11 START sql view model mine.raw_pos_location ............................. [RUN]
+[0m14:02:52.517000 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_franchise, now model.tasty_bytes.raw_pos_location)
+[0m14:02:52.517601 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_location
+[0m14:02:52.524114 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_location"
+[0m14:02:52.524937 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_location
+[0m14:02:52.531290 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_location"
+[0m14:02:52.532455 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_location"
+[0m14:02:52.533174 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_location"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_location
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.LOCATION
+  );
+[0m14:02:52.533783 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:52.975385 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.441 seconds
+[0m14:02:52.979305 [info ] [Thread-2 (]: 4 of 11 OK created sql view model mine.raw_pos_location ........................ [[32mSUCCESS 1[0m in 0.46s]
+[0m14:02:52.980253 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_location
+[0m14:02:52.980965 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_menu
+[0m14:02:52.981861 [info ] [Thread-2 (]: 5 of 11 START sql view model mine.raw_pos_menu ................................. [RUN]
+[0m14:02:52.982627 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_location, now model.tasty_bytes.raw_pos_menu)
+[0m14:02:52.983319 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_menu
+[0m14:02:52.992038 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_menu"
+[0m14:02:52.992877 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_menu
+[0m14:02:52.999315 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_menu"
+[0m14:02:53.000458 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_menu"
+[0m14:02:53.001074 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_menu: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_menu"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_menu
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.MENU
+  );
+[0m14:02:53.001643 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:53.452718 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.451 seconds
+[0m14:02:53.456335 [info ] [Thread-2 (]: 5 of 11 OK created sql view model mine.raw_pos_menu ............................ [[32mSUCCESS 1[0m in 0.47s]
+[0m14:02:53.457299 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_menu
+[0m14:02:53.457993 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_detail
+[0m14:02:53.458880 [info ] [Thread-2 (]: 6 of 11 START sql view model mine.raw_pos_order_detail ......................... [RUN]
+[0m14:02:53.459611 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_menu, now model.tasty_bytes.raw_pos_order_detail)
+[0m14:02:53.460193 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_detail
+[0m14:02:53.466866 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_detail"
+[0m14:02:53.467739 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_detail
+[0m14:02:53.474008 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_detail"
+[0m14:02:53.475213 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_detail"
+[0m14:02:53.475824 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_order_detail: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_order_detail"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_order_detail
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.ORDER_DETAIL
+  );
+[0m14:02:53.476385 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:53.921515 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.445 seconds
+[0m14:02:53.925213 [info ] [Thread-2 (]: 6 of 11 OK created sql view model mine.raw_pos_order_detail .................... [[32mSUCCESS 1[0m in 0.47s]
+[0m14:02:53.926172 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_detail
+[0m14:02:53.926882 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_order_header
+[0m14:02:53.927830 [info ] [Thread-2 (]: 7 of 11 START sql view model mine.raw_pos_order_header ......................... [RUN]
+[0m14:02:53.928582 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_detail, now model.tasty_bytes.raw_pos_order_header)
+[0m14:02:53.929175 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_order_header
+[0m14:02:53.935964 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_order_header"
+[0m14:02:53.936834 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_order_header
+[0m14:02:53.943355 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_order_header"
+[0m14:02:53.944594 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_order_header"
+[0m14:02:53.945274 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_order_header: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_order_header"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_order_header
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.ORDER_HEADER
+  );
+[0m14:02:53.945853 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:54.390669 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.445 seconds
+[0m14:02:54.394400 [info ] [Thread-2 (]: 7 of 11 OK created sql view model mine.raw_pos_order_header .................... [[32mSUCCESS 1[0m in 0.47s]
+[0m14:02:54.395358 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_order_header
+[0m14:02:54.396052 [debug] [Thread-2 (]: Began running node model.tasty_bytes.raw_pos_truck
+[0m14:02:54.397160 [info ] [Thread-2 (]: 8 of 11 START sql view model mine.raw_pos_truck ................................ [RUN]
+[0m14:02:54.397900 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_order_header, now model.tasty_bytes.raw_pos_truck)
+[0m14:02:54.398463 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.raw_pos_truck
+[0m14:02:54.405129 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.raw_pos_truck"
+[0m14:02:54.405972 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.raw_pos_truck
+[0m14:02:54.414957 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.raw_pos_truck"
+[0m14:02:54.416129 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.raw_pos_truck"
+[0m14:02:54.416745 [debug] [Thread-2 (]: On model.tasty_bytes.raw_pos_truck: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.raw_pos_truck"} */
+create or replace   view DBT_DEMO_DB.mine.raw_pos_truck
+  
+   as (
+    SELECT *
+FROM DBT_DEMO_DB.RAW.TRUCK
+  );
+[0m14:02:54.417323 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:02:54.854839 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.437 seconds
+[0m14:02:54.858525 [info ] [Thread-2 (]: 8 of 11 OK created sql view model mine.raw_pos_truck ........................... [[32mSUCCESS 1[0m in 0.46s]
+[0m14:02:54.859477 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.raw_pos_truck
+[0m14:02:54.860181 [debug] [Thread-2 (]: Began running node model.tasty_bytes.customer_loyalty_metrics
+[0m14:02:54.861405 [info ] [Thread-2 (]: 9 of 11 START sql table model mine.customer_loyalty_metrics .................... [RUN]
+[0m14:02:54.862175 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.raw_pos_truck, now model.tasty_bytes.customer_loyalty_metrics)
+[0m14:02:54.862760 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.customer_loyalty_metrics
+[0m14:02:54.869865 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m14:02:54.870743 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.customer_loyalty_metrics
+[0m14:02:54.886410 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.customer_loyalty_metrics"
+[0m14:02:54.888317 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.customer_loyalty_metrics"
+[0m14:02:54.889015 [debug] [Thread-2 (]: On model.tasty_bytes.customer_loyalty_metrics: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.customer_loyalty_metrics"} */
+create or replace transient table DBT_DEMO_DB.mine.customer_loyalty_metrics
+         as
+        (SELECT 
+    cl.customer_id,
+    cl.city,
+    cl.country,
+    cl.first_name,
+    cl.last_name,
+    cl.phone_number,
+    cl.e_mail,
+    SUM(oh.order_total) AS total_sales,
+    ARRAY_AGG(DISTINCT oh.location_id) AS visited_location_ids_array
+FROM DBT_DEMO_DB.mine.raw_customer_customer_loyalty cl
+JOIN DBT_DEMO_DB.mine.raw_pos_order_header oh
+ON cl.customer_id = oh.customer_id
+GROUP BY cl.customer_id, cl.city, cl.country, cl.first_name,
+cl.last_name, cl.phone_number, cl.e_mail
+        );
+[0m14:02:54.889629 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:03:01.411308 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 6.521 seconds
+[0m14:03:01.414894 [info ] [Thread-2 (]: 9 of 11 OK created sql table model mine.customer_loyalty_metrics ............... [[32mSUCCESS 1[0m in 6.55s]
+[0m14:03:01.415833 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.customer_loyalty_metrics
+[0m14:03:01.416567 [debug] [Thread-2 (]: Began running node model.tasty_bytes.orders
+[0m14:03:01.417474 [info ] [Thread-2 (]: 10 of 11 START sql table model mine.orders ..................................... [RUN]
+[0m14:03:01.418210 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.customer_loyalty_metrics, now model.tasty_bytes.orders)
+[0m14:03:01.418783 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.orders
+[0m14:03:01.427776 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.orders"
+[0m14:03:01.428633 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.orders
+[0m14:03:01.437653 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes.orders"
+[0m14:03:01.440551 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.orders"
+[0m14:03:01.441359 [debug] [Thread-2 (]: On model.tasty_bytes.orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.orders"} */
+create or replace transient table DBT_DEMO_DB.mine.orders
+         as
+        (SELECT 
+    oh.order_id,
+    oh.truck_id,
+    oh.order_ts,
+    od.order_detail_id,
+    od.line_number,
+    m.truck_brand_name,
+    m.menu_type,
+    t.primary_city,
+    t.region,
+    t.country,
+    t.franchise_flag,
+    t.franchise_id,
+    f.first_name AS franchisee_first_name,
+    f.last_name AS franchisee_last_name,
+    l.location_id,
+    cl.customer_id,
+    cl.first_name,
+    cl.last_name,
+    cl.e_mail,
+    cl.phone_number,
+    cl.children_count,
+    cl.gender,
+    cl.marital_status,
+    od.menu_item_id,
+    m.menu_item_name,
+    od.quantity,
+    od.unit_price,
+    od.price,
+    oh.order_amount,
+    oh.order_tax_amount,
+    oh.order_discount_amount,
+    oh.order_total
+FROM DBT_DEMO_DB.mine.raw_pos_order_detail od
+JOIN DBT_DEMO_DB.mine.raw_pos_order_header oh
+    ON od.order_id = oh.order_id
+JOIN DBT_DEMO_DB.mine.raw_pos_truck t
+    ON oh.truck_id = t.truck_id
+JOIN DBT_DEMO_DB.mine.raw_pos_menu m
+    ON od.menu_item_id = m.menu_item_id
+JOIN DBT_DEMO_DB.mine.raw_pos_franchise f
+    ON t.franchise_id = f.franchise_id
+JOIN DBT_DEMO_DB.mine.raw_pos_location l
+    ON oh.location_id = l.location_id
+LEFT JOIN DBT_DEMO_DB.mine.raw_customer_customer_loyalty cl
+    ON oh.customer_id = cl.customer_id
+        );
+[0m14:03:01.442019 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:05:03.457477 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 122.015 seconds
+[0m14:05:03.460925 [info ] [Thread-2 (]: 10 of 11 OK created sql table model mine.orders ................................ [[32mSUCCESS 1[0m in 122.04s]
+[0m14:05:03.461875 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.orders
+[0m14:05:03.462574 [debug] [Thread-2 (]: Began running node model.tasty_bytes.sales_metrics_by_location
+[0m14:05:03.463539 [info ] [Thread-2 (]: 11 of 11 START python table model mine.sales_metrics_by_location ............... [RUN]
+[0m14:05:03.464265 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes.orders, now model.tasty_bytes.sales_metrics_by_location)
+[0m14:05:03.464829 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes.sales_metrics_by_location
+[0m14:05:03.499457 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes.sales_metrics_by_location"
+[0m14:05:03.500412 [debug] [Thread-2 (]: Began executing node model.tasty_bytes.sales_metrics_by_location
+[0m14:05:03.510237 [debug] [Thread-2 (]: Writing runtime python for node "model.tasty_bytes.sales_metrics_by_location"
+[0m14:05:03.513777 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes.sales_metrics_by_location"
+[0m14:05:03.515107 [debug] [Thread-2 (]: On model.tasty_bytes.sales_metrics_by_location: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "tasty_bytes", "target_name": "sandbox", "node_id": "model.tasty_bytes.sales_metrics_by_location"} */
+WITH sales_metrics_by_location__dbt_sp AS PROCEDURE ()
+
+RETURNS STRING
+LANGUAGE PYTHON
+RUNTIME_VERSION = '3.9'
+PACKAGES = ('snowflake-snowpark-python')
+
+
+
+HANDLER = 'main'
+EXECUTE AS CALLER
+AS
+$$
+
+
+
+  
+    
+    
+from snowflake.snowpark.functions import col, lit, concat, count, sum as sum_, coalesce
+
+def model(dbt, session):
+    """
+    This model demonstrates basic Snowpark transformations using dbt Python models.
+    It joins location data with trucks and aggregates metrics by location.
+    Uses raw_pos models as sources instead of tb_101 directly.
+    """
+    # Get tables using dbt's ref function to reference the raw_pos models
+    locations_df = dbt.ref('raw_pos_location')
+    trucks_df = dbt.ref('raw_pos_truck')
+    orders_df = dbt.ref('raw_pos_order_header')
+    
+    # Join locations with trucks to get truck counts by location
+    location_trucks = (
+        trucks_df
+        .join(
+            locations_df, 
+            trucks_df["PRIMARY_CITY"] == locations_df["CITY"], 
+            "inner"
+        )
+        # Use simple column names and case-insensitive approach
+        .select(
+            locations_df["LOCATION_ID"],
+            locations_df["LOCATION"],
+            locations_df["CITY"],
+            trucks_df["TRUCK_ID"]
+        )
+        .groupBy("LOCATION_ID", "LOCATION", "CITY")
+        .agg(count("TRUCK_ID").alias("TRUCK_COUNT"))
+    )
+    
+    # Join with order data to get sales metrics
+    location_metrics = (
+        orders_df
+        .join(locations_df, "LOCATION_ID", "inner")
+        .groupBy("LOCATION_ID")
+        .agg(
+            sum_("ORDER_TOTAL").alias("TOTAL_SALES"),
+            sum_("ORDER_AMOUNT").alias("TOTAL_AMOUNT"),
+            sum_("ORDER_TAX_AMOUNT").alias("TOTAL_TAX")
+        )
+    )
+    
+    # Create a more simplified final version
+    joined_df = location_trucks.join(location_metrics, "LOCATION_ID", "left")
+    
+    # Add the calculated columns after join to avoid column reference issues
+    final_df = (
+        joined_df
+        .select(
+            col("LOCATION_ID"),
+            col("LOCATION"),
+            col("CITY"),
+            col("TRUCK_COUNT"),
+            # Use coalesce instead of fillna for Column objects
+            coalesce(col("TOTAL_SALES"), lit(0)).alias("TOTAL_SALES"),
+            coalesce(col("TOTAL_AMOUNT"), lit(0)).alias("TOTAL_AMOUNT"),
+            coalesce(col("TOTAL_TAX"), lit(0)).alias("TOTAL_TAX")
+        )
+    )
+    
+    # Add the full location description as a separate step
+    final_with_desc = (
+        final_df
+        .withColumn(
+            "LOCATION_DESCRIPTION", 
+            concat(
+                col("CITY"), 
+                lit(" (Trucks: "), 
+                col("TRUCK_COUNT").cast("string"), 
+                lit(")")
+            )
+        )
+    )
+    
+    # Return the final dataframe
+    return final_with_desc
+
+
+# This part is user provided model code
+# you will need to copy the next section to run the code
+# COMMAND ----------
+# this part is dbt logic for get ref work, do not modify
+
+def ref(*args, **kwargs):
+    refs = {"raw_pos_location": "DBT_DEMO_DB.mine.raw_pos_location", "raw_pos_order_header": "DBT_DEMO_DB.mine.raw_pos_order_header", "raw_pos_truck": "DBT_DEMO_DB.mine.raw_pos_truck"}
+    key = '.'.join(args)
+    version = kwargs.get("v") or kwargs.get("version")
+    if version:
+        key += f".v{version}"
+    dbt_load_df_function = kwargs.get("dbt_load_df_function")
+    return dbt_load_df_function(refs[key])
+
+
+def source(*args, dbt_load_df_function):
+    sources = {}
+    key = '.'.join(args)
+    return dbt_load_df_function(sources[key])
+
+
+config_dict = {}
+
+
+class config:
+    def __init__(self, *args, **kwargs):
+        pass
+
+    @staticmethod
+    def get(key, default=None):
+        return config_dict.get(key, default)
+
+class this:
+    """dbt.this() or dbt.this.identifier"""
+    database = "DBT_DEMO_DB"
+    schema = "mine"
+    identifier = "sales_metrics_by_location"
+    
+    def __repr__(self):
+        return 'DBT_DEMO_DB.mine.sales_metrics_by_location'
+
+
+class dbtObj:
+    def __init__(self, load_df_function) -> None:
+        self.source = lambda *args: source(*args, dbt_load_df_function=load_df_function)
+        self.ref = lambda *args, **kwargs: ref(*args, **kwargs, dbt_load_df_function=load_df_function)
+        self.config = config
+        self.this = this()
+        self.is_incremental = False
+
+# COMMAND ----------
+
+
+
+def materialize(session, df, target_relation):
+    # make sure pandas exists
+    import importlib.util
+    package_name = 'pandas'
+    if importlib.util.find_spec(package_name):
+        import pandas
+        if isinstance(df, pandas.core.frame.DataFrame):
+          session.use_database(target_relation.database)
+          session.use_schema(target_relation.schema)
+          # session.write_pandas does not have overwrite function
+          df = session.createDataFrame(df)
+    
+    df.write.mode("overwrite").save_as_table('DBT_DEMO_DB.mine.sales_metrics_by_location', table_type='transient')
+
+def main(session):
+    dbt = dbtObj(session.table)
+    df = model(dbt, session)
+    materialize(session, df, dbt.this)
+    return "OK"
+
+  
+$$
+CALL sales_metrics_by_location__dbt_sp();
+[0m14:05:03.516073 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m14:05:09.352307 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 5.836 seconds
+[0m14:05:09.356859 [info ] [Thread-2 (]: 11 of 11 OK created python table model mine.sales_metrics_by_location .......... [[32mSUCCESS 1[0m in 5.89s]
+[0m14:05:09.357828 [debug] [Thread-2 (]: Finished running node model.tasty_bytes.sales_metrics_by_location
+[0m14:05:09.360537 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m14:05:09.361138 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes.sales_metrics_by_location' was properly closed.
+[0m14:05:09.361838 [info ] [Dummy-1   ]: 
+[0m14:05:09.362396 [info ] [Dummy-1   ]: Finished running 1 incremental model, 3 table models, 7 view models in 0 hours 2 minutes and 20.47 seconds (140.47s).
+[0m14:05:09.365292 [debug] [Dummy-1   ]: Command end result
+[0m14:05:09.421570 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m14:05:09.424735 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m14:05:09.433208 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m14:05:09.433806 [info ] [Dummy-1   ]: 
+[0m14:05:09.434482 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m14:05:09.435005 [info ] [Dummy-1   ]: 
+[0m14:05:09.435538 [info ] [Dummy-1   ]: Done. PASS=11 WARN=0 ERROR=0 SKIP=0 TOTAL=11
+[0m14:05:09.437986 [debug] [Dummy-1   ]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 144.7848, "process_in_blocks": "0", "process_kernel_time": 1.93, "process_mem_max_rss": "484412", "process_out_blocks": "0", "process_user_time": 25.33}
+[0m14:05:09.438690 [debug] [Dummy-1   ]: Command `cli run` succeeded at 14:05:09.438415 after 144.79 seconds
+[0m14:05:09.439252 [debug] [Dummy-1   ]: Flushing usage events
